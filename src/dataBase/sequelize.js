@@ -5,8 +5,8 @@ mock_items = require('./mock')
 
 let sequelize
 if(process.env.NODE_ENV === 'production'){
-     sequelize = new Sequelize('u63v5gahi9wsuren', 'rc6ejreecou21zyy', 'yrt38ps6ix90j1by', {
-        host: 'uyu7j8yohcwo35j3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+     sequelize = new Sequelize('afpqk027nzhceqmm', 'gw6fhtniqf49dc4s', 'jy4ja78q9bikzu1d', {
+        host: '	nr84dudlpkazpylz.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
         dialect: 'mariadb',
         dialectOptions: {
           timezone: 'Etc/GMT',

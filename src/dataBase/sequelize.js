@@ -29,7 +29,7 @@ const item = item_model(sequelize,DataTypes)
 const user = user_model(sequelize,DataTypes)
 const init_dataBase = () => {
     return sequelize.sync(
-      {force:true}
+     {force:true}
     ).then(() => {
       mock_items.map(itemss =>{
         item.create({
@@ -41,6 +41,7 @@ const init_dataBase = () => {
             subcategory: itemss.subcategory,
             matricule: itemss.matricule
         })
+
       })
       console.log('La base de données a bien été initialisée !');
     });

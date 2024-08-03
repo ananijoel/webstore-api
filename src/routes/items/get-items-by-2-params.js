@@ -2,9 +2,11 @@ const { item } = require('../../dataBase/sequelize');
 const { Op } = require('sequelize');
 
 module.exports = (app) => {
-    app.get('/api/get-items/:field/:value/:limit', (req, res) => {
+    app.get('/api/get-items/:field/:value/:secondfield/:secondvalue/:limit', (req, res) => {
         const field = req.params.field;
         const value = isNaN(req.params.value)? req.params.value : parseFloat(req.params.value);
+        const secondfield = req.params.secondfield;
+        const secondvalue = isNaN(req.params.secondvalue)? req.params.secondvalue : parseFloat(req.params.secondvalue);
         const limit = parseInt(req.params.limit);
         /* Validation des entrées utilisateur
         const allowedFields = ['name', 'category', 'description','quantity']; // Exemple de champs autorisés
@@ -16,6 +18,9 @@ module.exports = (app) => {
             where: {
                 [field]: {
                     [Op.like]: `%${value}%`
+                },
+                [secondfield]: {
+                    [Op.like]: `%${secondvalue}%`
                 }
             },
             order: [['id', 'ASC']], 

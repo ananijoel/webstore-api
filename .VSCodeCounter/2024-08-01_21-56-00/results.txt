@@ -1,0 +1,61 @@
+Date : 2024-08-01 21:56:00
+Directory : /home/anani/Source code/active /webstore-api
+Total : 26 files,  765 codes, 26 comments, 84 blanks, all 875 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         24 |        763 |         26 |         83 |        872 |
+| Markdown   |          1 |          1 |          0 |          1 |          2 |
+| JSON       |          1 |          1 |          0 |          0 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                 | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                    |         26 |        765 |         26 |         84 |        875 |
+| . (Files)                                                                            |          2 |         41 |          2 |         12 |         55 |
+| src                                                                                  |         24 |        724 |         24 |         72 |        820 |
+| src/authentification                                                                 |          2 |         24 |          0 |          4 |         28 |
+| src/dataBase                                                                         |          1 |         33 |          0 |          5 |         38 |
+| src/insomnia                                                                         |          1 |          1 |          0 |          0 |          1 |
+| src/models                                                                           |          2 |        154 |          0 |          2 |        156 |
+| src/routes                                                                           |         18 |        512 |         24 |         61 |        597 |
+| src/routes/items                                                                     |          8 |        246 |         15 |         25 |        286 |
+| src/routes/user                                                                      |         10 |        266 |          9 |         36 |        311 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                             | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /home/anani/Source code/active /webstore-api/README.md                               | Markdown   |          1 |          0 |          1 |          2 |
+| /home/anani/Source code/active /webstore-api/app.js                                  | JavaScript |         40 |          2 |         11 |         53 |
+| /home/anani/Source code/active /webstore-api/src/authentification/auth.js            | JavaScript |         23 |          0 |          4 |         27 |
+| /home/anani/Source code/active /webstore-api/src/authentification/privatekey.js      | JavaScript |          1 |          0 |          0 |          1 |
+| /home/anani/Source code/active /webstore-api/src/dataBase/sequelize.js               | JavaScript |         33 |          0 |          5 |         38 |
+| /home/anani/Source code/active /webstore-api/src/insomnia/Insomnia_2024-08-01.json   | JSON       |          1 |          0 |          0 |          1 |
+| /home/anani/Source code/active /webstore-api/src/models/item.js                      | JavaScript |        111 |          0 |          2 |        113 |
+| /home/anani/Source code/active /webstore-api/src/models/user.js                      | JavaScript |         43 |          0 |          0 |         43 |
+| /home/anani/Source code/active /webstore-api/src/routes/items/add-item.js            | JavaScript |         22 |          0 |          0 |         22 |
+| /home/anani/Source code/active /webstore-api/src/routes/items/get-item-by-id.js      | JavaScript |         27 |          0 |          2 |         29 |
+| /home/anani/Source code/active /webstore-api/src/routes/items/get-item-picture.js    | JavaScript |         29 |          4 |          8 |         41 |
+| /home/anani/Source code/active /webstore-api/src/routes/items/get-items-by-params.js | JavaScript |         43 |          3 |          4 |         50 |
+| /home/anani/Source code/active /webstore-api/src/routes/items/get-items.js           | JavaScript |         23 |          1 |          3 |         27 |
+| /home/anani/Source code/active /webstore-api/src/routes/items/remove-item.js         | JavaScript |         23 |          1 |          1 |         25 |
+| /home/anani/Source code/active /webstore-api/src/routes/items/update-item-picture.js | JavaScript |         39 |          4 |          6 |         49 |
+| /home/anani/Source code/active /webstore-api/src/routes/items/update-item-text.js    | JavaScript |         40 |          2 |          1 |         43 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/add-user.js             | JavaScript |         23 |          0 |          3 |         26 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/get-user-by-param.js    | JavaScript |         28 |          0 |          1 |         29 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/get-user-cart.js        | JavaScript |         24 |          0 |          4 |         28 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/get-user-picture.js     | JavaScript |         21 |          1 |          3 |         25 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/get-users.js            | JavaScript |         23 |          1 |          2 |         26 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/remove-user-picture.js  | JavaScript |         24 |          1 |          3 |         28 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/remove-user.js          | JavaScript |         25 |          1 |          1 |         27 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/update-user-picture.js  | JavaScript |         34 |          0 |          5 |         39 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/update-user.js          | JavaScript |         33 |          4 |          8 |         45 |
+| /home/anani/Source code/active /webstore-api/src/routes/user/user-login.js           | JavaScript |         31 |          1 |          6 |         38 |
+| Total                                                                                |            |        765 |         26 |         84 |        875 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

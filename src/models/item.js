@@ -1,6 +1,4 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const validTypes = ['console', 'PS3', 'PS4', 'PS5', 'xboxseries', 'nintendo', 'PC', 'gift cards', 'accessories','jeu'];
-
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define('Item', {
         id: {
@@ -48,33 +46,16 @@ module.exports = (sequelize, DataTypes) => {
         category: {
             type: DataTypes.STRING,
             allowNull: false,
-            get() {
-                return this.getDataValue('category').split(',');
-            },
-            set(category) {
-                if (Array.isArray(category)) {
-                    this.setDataValue('category', category.join());
-                } else {
-                    this.setDataValue('category', category);
-                }
-            },
-            validate: {
-                isTypeValid(value) {
-                    if (!value) {
-                        throw new Error('Un item doit au moins avoir une catégorie.');
-                    }
-                    value.split(',').forEach(type => {
-                        if (!validTypes.includes(type)) {
-                            throw new Error(`La catégorie d'un item doit appartenir à la liste suivante: ${validTypes}`);
-                        }
-                    });
-                }
-            }
+
+        },
+        subcategory: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         matricule: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+            //unique: true,
             validate: {
                 notNull: { msg: `Le matricule de l'item ne doit pas être nul` },
                 notEmpty: { msg: `Le matricule de l'item ne doit pas être vide` }

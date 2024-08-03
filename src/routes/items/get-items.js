@@ -1,8 +1,11 @@
 const { item } = require('../../dataBase/sequelize')
 
 module.exports = (app) => {
-  app.get('/api/get-items', (req, res) => {
-      item.findAll({order: ['name']})
+  app.get('/api/get-all-items/:limit/:field/:order/', (req, res) => {
+    const limit = parseInt(req.params.limit)
+    const order = req.params.order
+    const field = req.params.field
+      item.findAll({order: [[`${field}`,`${order}`]],limit: limit})
       .then(items => {
         const message = 'La liste des Produits a bien été récupérée.';
         const filteredItems = items.map(item => ({

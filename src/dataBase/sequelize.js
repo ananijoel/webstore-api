@@ -29,7 +29,7 @@ const item = item_model(sequelize,DataTypes)
 const user = user_model(sequelize,DataTypes)
 const init_dataBase = () => {
     return sequelize.sync(
-     {force:true}
+     //{force:true}
     ).then(() => {
       mock_items.map(itemss =>{
         item.create({

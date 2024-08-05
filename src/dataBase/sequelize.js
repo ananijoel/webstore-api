@@ -30,7 +30,7 @@ const user = user_model(sequelize,DataTypes)
 const init_dataBase = () => {
     return sequelize.sync(
      {force:true}
-    )/*.then(() => {
+    ).then(() => {
       mock_items.map(itemss =>{
         item.create({
             name: itemss.name,
@@ -44,7 +44,7 @@ const init_dataBase = () => {
 
       })
       console.log('La base de données a bien été initialisée !');
-    });*/
+    });
 }
 
 module.exports = {

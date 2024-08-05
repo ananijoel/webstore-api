@@ -11,7 +11,7 @@ if(process.env.NODE_ENV === 'production'){
         dialectOptions: {
           timezone: 'Etc/GMT',
         },
-        logging: true
+        logging: false
       })
 } else {
      sequelize = new Sequelize('storebase', 'root', '', {

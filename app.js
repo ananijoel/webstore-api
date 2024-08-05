@@ -2,13 +2,13 @@ const express = require('express')
 const favicon = require('serve-favicon')
 const bodyParser = require('body-parser')
 const sequelize = require('./src/dataBase/sequelize')
-const cors = require('cors')
+//const cors = require('cors')
 
 const staticport = 3000
 const app = express()
 const port = process.env.PORT || staticport
 
-sequelize.init_dataBase()
+//sequelize.init_dataBase()
 
 app
     .use(favicon(__dirname + '/favicon.ico'))

@@ -49,8 +49,8 @@ app.use(({res})=>{
 })
 
 if(process.env.PORT){
-    app.listen(port,() => console.log('le projet note-store-api est demarée'))
+    app.listen(port,() => console.log('le projet hello webstore api est demarée'))
 } else{
-    app.listen(port,() => console.log('le projet note-store-api est demarée sur : http://localhost:'+staticport))
+    app.listen(port,() => console.log('le projet hello webstore api est demarée sur : http://localhost:'+staticport))
 }
 

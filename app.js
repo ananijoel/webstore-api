@@ -1,5 +1,5 @@
 const express = require('express')
-const favicon = require('serve-favicon')
+//const favicon = require('serve-favicon')
 const bodyParser = require('body-parser')
 const sequelize = require('./src/dataBase/sequelize')
 //const cors = require('cors')
@@ -11,12 +11,12 @@ const port = process.env.PORT || staticport
 //sequelize.init_dataBase()
 
 app
-    .use(favicon(__dirname + '/favicon.ico'))
+    //.use(favicon(__dirname + '/favicon.ico'))
     .use(bodyParser.json())
     //.use(cors())
 
 
-app.get('/', (req, res) => res.json('hello note-store-api'))
+app.get('/', (req, res) => res.json('hello webstore api'))
 
 // item routes
 require('./src/routes/items/add-item')(app)

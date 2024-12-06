@@ -16,7 +16,6 @@ module.exports = (app) => {
           right_pic: item.right_pic !== null,
           up_pic: item.up_pic !== null,
           down_pic: item.down_pic !== null,
-          //down_pic: item.down_pic.
           
         }));
         res.json({ message, data: filteredItems });

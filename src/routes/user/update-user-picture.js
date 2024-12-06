@@ -1,11 +1,14 @@
 const { user } = require('../../dataBase/sequelize');
 const { ValidationError, UniqueConstraintError } = require('sequelize');
 const multer = require('multer');
+const auth = require('../../authentification/auth');
+
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
-const auth = require('../../authentification/auth')
+
 module.exports = (app) => {
-    app.put('/api/update-user-picture/:username',auth, upload.single('picture'), async (req, res) => {
+    app.put('/api/update-user-picture/:username', auth, upload.single('picture'), async (req, res) => {
         const username = req.params.username;
         const { file, body } = req;
         const { ...otherDetails } = body;
@@ -14,10 +17,24 @@ module.exports = (app) => {
             if (!file) {
                 return res.status(400).json({ message: 'Aucun fichier téléchargé.' });
             }
+            if (!file.mimetype.startsWith('image/')) {
+                return res.status(400).json({ message: 'Le fichier doit être une image.' });
+            }
+            if (file.size > MAX_FILE_SIZE) {
+                return res.status(400).json({ message: 'Le fichier est trop volumineux.' });
+            }
+
+            const userExists = await user.findOne({ where: { username } });
+            if (!userExists) {
+                return res.status(404).json({ message: 'Utilisateur non trouvé.' });
+            }
 
             const buf = file.buffer;
 
-            const [updated] = await user.update({ ...otherDetails, picture: buf }, { where: { username: username } });
+            const [updated] = await user.update(
+                { ...otherDetails, picture: buf },
+                { where: { username } }
+            );
 
             if (updated) {
                 const message = `L'image a bien été mise à jour.`;
@@ -32,7 +49,11 @@ module.exports = (app) => {
             if (error instanceof UniqueConstraintError) {
                 return res.status(400).json({ message: 'Cette image existe déjà.', data: error.errors });
             }
-            res.status(500).json({ message: 'Une erreur est survenue lors de la mise à jour de l\'image.', data: error });
+            console.error(error); // Log unexpected errors
+            return res.status(500).json({
+                message: 'Une erreur est survenue lors de la mise à jour de l\'image.',
+                data: error,
+            });
         }
     });
 };

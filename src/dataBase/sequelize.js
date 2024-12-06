@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require("sequelize")
 item_model = require('../models/item')
 user_model = require('../models/user')
 mock_items = require('./mock')
-
+let demo = true
 let sequelize
 if(process.env.NODE_ENV === 'production'){
      sequelize = new Sequelize('vldmmz94vudmlpva', 'g9cz8myv9jnvxe06', 'ehfxil4mr325mbwo  ', {
@@ -27,7 +27,9 @@ if(process.env.NODE_ENV === 'production'){
 
 const item = item_model(sequelize,DataTypes)
 const user = user_model(sequelize,DataTypes)
-const init_dataBase = () => {
+let init_dataBase
+if (demo === true){
+  init_dataBase = () => {
     return sequelize.sync(
      {force:true}
     ).then(() => {
@@ -45,8 +47,19 @@ const init_dataBase = () => {
       })
       console.log('La base de données a bien été initialisée !');
     });
+  }
+} else {
+  
+    init_dataBase = () => {
+      return sequelize.sync(
+       {force:true}
+      ).then(() => {
+        console.log('La base de données a bien été initialisée !');
+      });
+    }
 }
 
 module.exports = {
-    init_dataBase,item,user
+    init_dataBase,
+    item,user
 }
